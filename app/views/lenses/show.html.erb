@@ -1,4 +1,8 @@
 <h1><%= @lens.name %></h1>
+
+<%= button_to '削除', @lens, :method => :delete %>
+<%= button_to '編集', {controller: "lenses", action: "edit"}, {method: :get} %>
+
 <table>
     <tr>
         <th>名称</th>
@@ -45,11 +49,11 @@
         <td><%= @lens.stabilization ? "対応" : "非対応" %></td>
     </tr>
     <tr>
-        <th>テレコンバーター　(1.4x)</th>
+        <th>テレコンバーター(1.4x)</th>
         <td><%= @lens.teleconverter_14x ? "対応" : "非対応" %></td>
     </tr>
     <tr>
-        <th>テレコンバーター　(2.0x)</th>
+        <th>テレコンバーター(2.0x)</th>
         <td><%= @lens.teleconverter_20x ? "対応" : "非対応" %></td>
     </tr>
     <tr>

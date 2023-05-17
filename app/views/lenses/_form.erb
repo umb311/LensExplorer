@@ -1,0 +1,233 @@
+<%= form_with model:@lens do |form| %>
+    <table>
+        <tr>
+            <td>
+                <%= form.label :name, "名称" %>
+            </td>
+            <td>
+                <%= form.text_field :name %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= form.label :model_number, "型番" %>
+            </td>
+            <td>
+                <%= form.text_field :model_number %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= form.label :mount, "マウント" %>
+            </td>
+            <td>
+                <%= form.text_field :mount %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                レンズ種類
+            </td>
+            <td>
+                <%=form.label  :lens_type, '単焦点', value: true %>
+                <%= form.radio_button :lens_type, true  %>
+                <%= form.label :lens_type, 'ズーム', value: false %>
+                <%= form.radio_button :lens_type, false  %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= form.label :focal_length, "焦点距離" %>
+            </td>
+            <td>
+                <%= form.text_field :focal_length %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= form.label :minimum_focusing_distance, "最短焦点距離" %>
+            </td>
+            <td>
+                <%= form.number_field :minimum_focusing_distance %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :maximum_focusing_distance, "最長焦点距離" %>
+            </td>
+            <td>
+            <%= form.number_field :maximum_focusing_distance %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :aperture, "F値" %>
+            </td>
+            <td>
+            <%= form.text_field :aperture %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :maximum_aperture, "開放絞り" %>
+            </td>
+            <td>
+            <%= form.number_field :maximum_aperture, step: "0.1" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :minimum_aperture, "最大絞り" %>
+            </td>
+            <td>
+            <%= form.number_field :minimum_aperture, step: "0.1" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :number_of_aperture_blades, "絞り羽根枚数" %>
+            </td>
+            <td>
+            <%= form.number_field :number_of_aperture_blades %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :angle_of_view, "画角" %>
+            </td>
+            <td>
+            <%= form.text_field :angle_of_view %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :maximum_angle_of_view, "最大画角" %>
+            </td>
+            <td>
+            <%= form.number_field :maximum_angle_of_view, step: "0.1" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :minimum_angle_of_view, "最小画角" %>
+            </td>
+            <td>
+            <%= form.number_field :minimum_angle_of_view, step: "0.1" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :minimum_shooting_distance, "最短撮影距離" %>
+            </td>
+            <td>
+            <%= form.text_field :minimum_shooting_distance %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :minimum_shooting_distance_tele, "最短撮影距離（テレ）" %>
+            </td>
+            <td>
+            <%= form.number_field :minimum_shooting_distance_tele, step: "0.1" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :minimum_shooting_distance_wide, "最短撮影距離（ワイド）" %>
+            </td>
+            <td>
+            <%= form.number_field :minimum_shooting_distance_wide, step: "0.1" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :lens_construction, "レンズ構成" %>
+            </td>
+            <td>
+            <%= form.text_field :lens_construction %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :maximum_magnification, "最大撮影倍率" %>
+            </td>
+            <td>
+            <%= form.text_field :maximum_magnification %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :filter_diameter, "フィルター径" %>
+            </td>
+            <td>
+            <%= form.text_field :filter_diameter %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                手振れ補正
+            </td>
+            <td>
+            <%= form.label :stabilization, 'あり', value: true %>
+            <%= form.radio_button :stabilization, true  %>
+            <%= form.label :stabilization, 'なし', value: false %>
+            <%= form.radio_button :stabilization, false  %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                テレコン(1.4x)
+            </td>
+            <td>
+            <%= form.label :teleconverter_14x, '対応', value: true %>
+            <%= form.radio_button :teleconverter_14x, true  %>
+            <%= form.label :teleconverter_14x, '非対応', value: false %>
+            <%= form.radio_button :teleconverter_14x, false  %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                テレコン(2.0x)
+            </td>
+            <td>
+            <%= form.label :teleconverter_20x, '対応', value: true %>
+            <%= form.radio_button :teleconverter_20x, true  %>
+            <%= form.label :teleconverter_20x, '非対応', value: false %>
+            <%= form.radio_button :teleconverter_20x, false  %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :dimensions, "寸法" %>
+            </td>
+            <td>
+            <%= form.text_field :dimensions %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :weight, "質量" %>
+            </td>
+            <td>
+            <%= form.number_field :weight %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :sensor_size, "センサーサイズ" %>
+            </td>
+            <td>
+            <%= form.text_field :sensor_size %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <%= form.label :description, "説明" %>
+            </td>
+            <td>
+            <%= form.text_area :description %>
+            </td>
+        </tr>
+    </table>
+    <%= form.submit "登録" %>
+<% end %>
