@@ -1,0 +1,41 @@
+lens model レコード
+・メーカー
+・レンズブランド（SONY-GM,SONY-G,N,ZEISS
+                SIGMA Art, Contemporary, Sports
+                TAMRON XXX ...）
+・名称(string)
+・型番(string)
+・マウント(string)
+・単焦点orズームレンズ(boolean)
+
+・焦点距離(string)
+・最短焦点距離(integer)
+・最長焦点距離(integer)
+
+・F値(string)
+・開放絞り（F値）(float)
+・最小絞り（F値）(float)
+・絞り羽根枚数(integer)
+
+・画角(string)
+・最大画角(float)
+・最小画角(float)
+
+
+・最短撮影距離(string)
+・最短撮影距離（テレ）(float)
+・最短撮影距離（ワイド）(float)
+
+・レンズ構成（群-枚）(string)
+・最大撮影倍率(string)
+・フィルター径(string)
+・手振れ補正(boolean)
+・テレコン（1.4）(boolean)
+・テレコン（2.0）(boolean)
+・寸法(string)
+・重量(integer)
+・対応撮像画面サイズ(フルサイズ、APS-C、マイクロフォーサーズ、)(string)
+・説明(text)
+
+lensモデル名の変換がおかしかったため、以下のファイルを修正
+C:\development\RailsProjects\LensExplorer\config\initializers\inflections.rb
