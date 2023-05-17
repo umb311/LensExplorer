@@ -1,8 +1,10 @@
-class ItemsController < ApplicationController
+class LensesController < ApplicationController
   def index
+    @lenses = Lens.all
   end
 
   def new
+    @lens = Lens.new
   end
 
   def create
@@ -12,6 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @lens = Lens.find(params[:id])
   end
 
   def update

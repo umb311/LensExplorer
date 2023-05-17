@@ -1,0 +1,77 @@
+<h1><%= @lens.name %></h1>
+<table>
+    <tr>
+        <th>名称</th>
+        <td><%= @lens.name %></td>
+    </tr>
+    <tr>
+        <th>レンズマウント</th>
+        <td><%= @lens.mount %>マウント</td>
+    </tr>
+    <tr>
+        <th>焦点距離(mm)</th>
+        <td><%= @lens.focal_length %>mm</td>
+    </tr>
+    <tr>
+        <th>絞り</th>
+        <td><%= @lens.aperture %></td>
+    </tr>
+    <tr>
+        <th>絞り羽根枚数</th>
+        <td><%= @lens.number_of_aperture_blades %>枚</td>
+    </tr>
+    <tr>
+        <th>画角</th>
+        <td><%= @lens.angle_of_view %></td>
+    </tr>
+    <tr>
+        <th>最短撮影距離</th>
+        <td><%= @lens.minimum_shooting_distance %>m</td>
+    </tr>
+    <tr>
+        <th>レンズ構成（群-枚）</th>
+        <td><%= @lens.lens_construction %></td>
+    </tr>
+    <tr>
+        <th>最大撮影倍率（倍）</th>
+        <td><%= @lens.maximum_magnification %></td>
+    </tr>
+    <tr>
+        <th>フィルター径</th>
+        <td><%= @lens.filter_diameter %>mm</td>
+    </tr>
+    <tr>
+        <th>レンズ内手振れ補正</th>
+        <td><%= @lens.stabilization ? "対応" : "非対応" %></td>
+    </tr>
+    <tr>
+        <th>テレコンバーター　(1.4x)</th>
+        <td><%= @lens.teleconverter_14x ? "対応" : "非対応" %></td>
+    </tr>
+    <tr>
+        <th>テレコンバーター　(2.0x)</th>
+        <td><%= @lens.teleconverter_20x ? "対応" : "非対応" %></td>
+    </tr>
+    <tr>
+        <th>寸法(mm)</th>
+        <td><%= @lens.dimensions %></td>
+    </tr>
+    <tr>
+        <th>質量</th>
+        <td><%= @lens.weight %>g</td>
+    </tr>
+    <tr>
+        <th>対応センサーサイズ</th>
+        <td>
+            <%if @lens.sensor_size == "FF" %>
+                35mmフルサイズ
+            <% elsif @lens.sensor_size == "APS-C" %>
+                APS-C
+            <% elsif @lens.sensor_size == "M4/3" %>
+                マイクロフォーサーズ
+            <% elsif @lens.sensor_size == "1inch" %>
+                １型
+            <% end %>
+        </td>
+    </tr>
+</table>
