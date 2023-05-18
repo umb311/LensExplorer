@@ -1,3 +1,5 @@
 <% @lenses.each do |lens| %>
-    <p><%= link_to lens.name, lens_path(lens) %></p>
+    <div>
+        <p><%= link_to lens.name, lens_path(lens) %></p>
+    </div>
 <% end %>

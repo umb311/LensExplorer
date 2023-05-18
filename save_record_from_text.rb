@@ -1,16 +1,13 @@
 # 以下のコマンドで実行可能
-# rails runner save_record.rb
+# rails runner save_record_from_text.rb
 
 require 'nokogiri'
 require 'open-uri'
 # open-uriを明示的に有効化
 OpenURI::Buffer::StringMax = 0
 
-
 def scrape(url)
     puts "----- scprape : #{url} -----"
-    # open-uriを明示的に有効化
-    # OpenURI::Buffer::StringMax = 0
 
     doc = Nokogiri::HTML(URI.open(url))
 
@@ -136,6 +133,11 @@ end
 File.open("E_lenses.txt", mode = "rt"){|f|
     f.each_line{|line|
         url = line.chomp
-        scrape(url)
+
+        begin
+            scrape(url)
+        rescue OpenURI::HTTPError => e
+            next
+        end
     }
 }

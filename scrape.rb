@@ -12,8 +12,8 @@ doc = Nokogiri::HTML(URI.open(url))
 
 nodes = doc.css(".s5-listItem4__mainLink")
 
-nodes .each do |node|
-    puts node
+nodes.each do |node|
+    puts node[:href]
 end
 
 # nodes = doc.xpath('//table/tr')
