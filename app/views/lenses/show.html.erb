@@ -1,12 +1,19 @@
 <h1><%= @lens.name %></h1>
 
-<%= button_to '削除', @lens, :method => :delete %>
-<%= button_to '編集', {controller: "lenses", action: "edit"}, {method: :get} %>
+<%= image_tag "/images/#{@lens.model_number}/#{@lens.model_number}.jpg" %>
 
 <table>
     <tr>
+        <th>メーカー</th>
+        <td><%= @lens.maker %></td>
+    </tr>
+    <tr>
         <th>名称</th>
         <td><%= @lens.name %></td>
+    </tr>
+    <tr>
+        <th>型番</th>
+        <td><%= @lens.model_number %></td>
     </tr>
     <tr>
         <th>レンズマウント</th>
@@ -79,3 +86,6 @@
         </td>
     </tr>
 </table>
+
+<%= button_to '削除', @lens, :method => :delete %>
+<%= button_to '編集', {controller: "lenses", action: "edit"}, {method: :get} %>

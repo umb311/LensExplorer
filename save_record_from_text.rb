@@ -100,6 +100,7 @@ def scrape(url)
     end
 
     lens = Lens.new(
+        maker: "ソニー",
         name: name,
         model_number: model_number,
         mount: mount,

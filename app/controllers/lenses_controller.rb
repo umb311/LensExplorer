@@ -40,6 +40,8 @@ class LensesController < ApplicationController
   private
   def lens_params
     params.require(:lens).permit(
+      :maker,
+      :grade,
       :name,
       :model_number,
       :mount,

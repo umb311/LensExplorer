@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+    background-color: #1E2022;
+    color:#DDDDDD;
+    /* サブ文字カラー：#9A9A9B */
+ }
+
+ a{
+    color:#DDDDDD;
+ }
+
+ .thumb {
+    max-width: 200px; /* 画像の最大横幅を指定 */
+    height: auto; /* 縦横比を維持 */
+  }

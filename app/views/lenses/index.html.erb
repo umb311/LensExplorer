@@ -1,5 +1,7 @@
 <% @lenses.each do |lens| %>
     <div>
-        <p><%= link_to lens.name, lens_path(lens) %></p>
+        <div><%= link_to image_tag("/images/#{lens.model_number}/#{lens.model_number}.jpg", class: "thumb"), lens_path(lens) %></div>
+        <div><%= link_to lens.name, lens_path(lens) %></div>
+        <div><%= lens.model_number %></div>
     </div>
 <% end %>
