@@ -19,7 +19,7 @@ def getAllLensLink(url)
 end
 # getAllLensLink("https://www.sony.jp/ichigan/lineup/e-lens.html")
 
-### 各レンズの使用を取得 ###
+### 各レンズの仕様を取得 ###
 def getLensInfo(url)
     doc = Nokogiri::HTML(URI.open(url))
 
@@ -164,3 +164,16 @@ def getAllLensImage
     }
 end
 # getAllLensImage
+
+### SIGMAの全Eマウントレンズへのリンクを取得 ###
+def getAllSigmaLensLink(url)
+    doc = Nokogiri::HTML(URI.open(url))
+    
+    nodes = doc.css(".c-content-figure")
+    puts nodes
+    
+    nodes.each do |node|
+        puts node[:href]
+    end
+end
+getAllSigmaLensLink("https://www.sigma-global.com/jp/magazine/m_series/others-lenses/sony-e-mount/sigma_emount_lenses/")

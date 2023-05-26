@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'lenses/index'
   # get 'lenses/new'
   # get 'lenses/create'
