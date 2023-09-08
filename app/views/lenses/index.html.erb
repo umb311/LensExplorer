@@ -1,28 +1,15 @@
-<div class="columns">
-
-    <div class="column">
-
-    </div>
-
-    <div class="column is-two-thirds">
-        <div><%= link_to "new", new_lens_path, class: :"button is-primary"%></div>
+<div><%= link_to "new", new_lens_path, class: :"button is-primary"%></div>
         
-        <% @lenses.each do |lens| %>
-            <div class="card">
-                <div class="card-image">
-                    <%= link_to image_tag("/images/#{lens.model_number}/#{lens.model_number}.jpg", class: "thumb"), lens_path(lens) %>
-                </div>
-                <div class="card-content">
-                    <div class="content">
-                        <div><%= link_to lens.name, lens_path(lens) %></div>
-                        <div><%= lens.model_number %></div>
-                    </div>
-                </div>
+<% @lenses.each do |lens| %>
+    <div class="card">
+        <div class="card-image">
+            <%= link_to image_tag("/images/#{lens.model_number}/#{lens.model_number}.jpg", class: "thumb"), lens_path(lens) %>
+        </div>
+        <div class="card-content">
+            <div class="content">
+                <div><%= link_to lens.name, lens_path(lens) %></div>
+                <div><%= lens.model_number %></div>
             </div>
-        <% end %>
+        </div>
     </div>
-
-    <div class="column">
-
-    </div>
-</div>
+<% end %>

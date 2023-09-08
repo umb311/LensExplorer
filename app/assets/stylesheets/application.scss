@@ -15,11 +15,20 @@
  */
 
 @import "bulma";
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+*{
+   font-family: 'Kosugi Maru', sans-serif;
+}
 
 body{
    // background-color: #1E2022;
    // color:#DDDDDD;
    /* サブ文字カラー：#9A9A9B */
+}
+
+h1 {
+   font-size: 30px;
 }
 
 a{
