@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'lenses#index'
+
   devise_for :users
   # get 'lenses/index'
   # get 'lenses/new'
