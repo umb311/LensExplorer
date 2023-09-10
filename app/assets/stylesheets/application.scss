@@ -21,7 +21,7 @@
    font-family: 'Kosugi Maru', sans-serif;
 }
 
-body{
+body {
    // background-color: #1E2022;
    // color:#DDDDDD;
    /* サブ文字カラー：#9A9A9B */
@@ -31,7 +31,7 @@ h1 {
    font-size: 30px;
 }
 
-a{
+a {
    // color:#DDDDDD;
 }
 
@@ -41,5 +41,21 @@ a{
 }
 
 .card {
-   margin: 10px;
+   margin: 0 auto;
+}
+
+.main_img {
+   margin: 0 auto;
+   text-align: center;
+}
+
+#top-logo-img {
+   margin: 0 auto;
+}
+
+.flex-box {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;/*縦・横で同じ余白*/
+   margin: 0 auto;
 }

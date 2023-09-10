@@ -19,7 +19,16 @@
       </div>
       
       <div class="column is-two-thirds">
-        <%= image_tag "/LensExplorer_logo.png" %>
+        <!-- ログイン・ログアウト処理 -->
+        <% if user_signed_in? %>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: :"button is-primary"%>
+        <% else %>
+            <%= link_to "Login", new_user_session_path, class: :"button is-primary"%>
+        <% end %>
+
+        <div id="top-logo-img">
+          <%= link_to image_tag("/LensExplorer_logo.png", class: "image"), root_path %>
+        </div>
         <%= yield %>
       </div>
 

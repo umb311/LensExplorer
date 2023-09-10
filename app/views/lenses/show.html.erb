@@ -1,18 +1,23 @@
 <% if user_signed_in? %>
-    <%= button_to '削除', @lens, :method => :delete, class: :"button is-primary" %>
     <%= button_to '編集', {controller: "lenses", action: "edit"}, {method: :get, class: :"button is-primary"} %>
 <% end %>
 
-<h1 class="title"><%= @lens.name %></h1>
+<div>
+    <h1 class="title"><%= @lens.name %></h1>
+</div>
 
-<%= image_tag "/images/#{@lens.model_number}/#{@lens.model_number}.jpg" %>
+<div class="main_img">
+    <%= image_tag "/images/#{@lens.model_number}/#{@lens.model_number}.jpg" %>
+</div>
 
-    <!-- タグリスト -->
+<!-- tag list -->
+<div>
     <% @lens_tags.each do |tag| %>
         <label class="tag is-info is-medium"><%= tag.name %></label>
     <% end %>
+</div>
 
-<table class="table is-narrow">
+<table class="table is-narrow is-fullwidth is-striped">
     <tr>
         <th>メーカー</th>
         <td><%= @lens.maker %></td>
@@ -96,3 +101,5 @@
         </td>
     </tr>
 </table>
+
+<%= button_to '削除', @lens, :method => :delete, class: :"button is-danger" %>
