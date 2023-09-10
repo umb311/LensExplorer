@@ -7,6 +7,11 @@
 
 <%= image_tag "/images/#{@lens.model_number}/#{@lens.model_number}.jpg" %>
 
+    <!-- タグリスト -->
+    <% @lens_tags.each do |tag| %>
+        <label class="tag is-info is-medium"><%= tag.name %></label>
+    <% end %>
+
 <table class="table is-narrow">
     <tr>
         <th>メーカー</th>

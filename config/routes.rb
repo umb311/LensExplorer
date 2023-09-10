@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'lenses#index'
 
+  # タグ検索用
+    get "sarch_tag" => "lenses#search_tag"
+
   devise_for :users
   # get 'lenses/index'
   # get 'lenses/new'

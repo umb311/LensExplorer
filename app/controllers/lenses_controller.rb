@@ -1,6 +1,7 @@
 class LensesController < ApplicationController
   def index
     @lenses = Lens.all
+    @tag_list = Tag.all
   end
 
   def new
@@ -9,8 +10,11 @@ class LensesController < ApplicationController
 
   def create
     @lens = Lens.new(lens_params)
+
+    tag_list = params[:lens]['tag_names'].split(',')
     
     if @lens.save
+      @lens.save_lens_tags(tag_list)
       redirect_to lenses_path, notice: 'created'
     else
       render :new
@@ -19,22 +23,42 @@ class LensesController < ApplicationController
 
   def edit
     @lens = Lens.find(params[:id])
+    @tag_list = @lens.tags.pluck(:name).join(',')
   end
 
   def show
     @lens = Lens.find(params[:id])
+    # @tag_list = @lens.tags.pluck(:tag_name).join(',')
+    @lens_tags = @lens.tags
   end
 
   def update
     @lens = Lens.find(params[:id])
-    @lens.update(lens_params)
-    redirect_to lens_path
+
+    tag_list=params[:lens][:tag_name].split(',')
+    if @lens.update(lens_params)
+      @lens.save_lens_tags(tag_list)
+      redirect_to lens_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @lens = Lens.find(params[:id])
     @lens.destroy
     redirect_to lenses_path, notice: 'destroyed'
+  end
+
+  def search_tag
+    # 検索結果画面でもタグ一覧表示
+    @tag_list = Tag.all
+
+    # 検索されたタグを受け取る
+    @tag = Tag.find(params[:tag_id])
+
+    # 検索されたタグに紐づく投稿を表示
+    @lens = @tag.lenses
   end
 
   private

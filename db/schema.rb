@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_24_154049) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_10_022131) do
+  create_table "lens_tags", force: :cascade do |t|
+    t.integer "lens_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lens_id", "tag_id"], name: "index_lens_tags_on_lens_id_and_tag_id", unique: true
+    t.index ["lens_id"], name: "index_lens_tags_on_lens_id"
+    t.index ["tag_id"], name: "index_lens_tags_on_tag_id"
+  end
+
   create_table "lenses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,6 +55,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_154049) do
     t.string "grade"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,4 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_154049) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lens_tags", "lenses"
+  add_foreign_key "lens_tags", "tags"
 end

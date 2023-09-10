@@ -1,4 +1,7 @@
 <%= form_with model:@lens do |form| %>
+    <label>タグ(,で区切ると複数タグ登録できます)</label>
+    <%= form.text_field :tag_name, value: @tag_list, class: 'form-control' %>
+
     <table>
         <tr>
             <td>
