@@ -95,3 +95,5 @@ class LensesController < ApplicationController
     )
   end
 end
+
+#hoge
