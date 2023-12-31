@@ -1,6 +1,6 @@
 class LensesController < ApplicationController
   def index
-    @lenses = Lens.all
+    # @lenses = Lens.all
     @tag_list = Tag.all
   end
 

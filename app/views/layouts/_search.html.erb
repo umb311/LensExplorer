@@ -1,0 +1,31 @@
+<div class="box">
+    <div class="search-form">
+        <%= search_form_for @q do |f| %>
+            <div>
+                <%= f.search_field :name_cont, placeholder: 'キーワード', class: :"input" %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :stabilization_true, '手振れ補正' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :stabilization_true, include_hidden: false %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :lens_type_false, 'ズームレンズ' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :lens_type_false, include_hidden: false %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :lens_type_true, '単焦点レンズ' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :lens_type_true, include_hidden: false %>
+            </div>
+            
+            <div class="search-button">
+                <%= f.submit "検索", class: :"button is-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>

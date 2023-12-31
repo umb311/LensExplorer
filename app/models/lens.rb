@@ -5,6 +5,10 @@ class Lens < ApplicationRecord
     has_many :lens_tags, dependent: :destroy
     has_many :tags, through: :lens_tags
 
+    def self.ransackable_attributes(auth_object = nil)
+        ["model_number", "name", "stabilization", "teleconverter_14x", "teleconverter_20x", "lens_type"]
+    end
+
     def save_lens_tags(tags)
         # タグが存在していれば、タグの名前を配列として全て取得
         current_tags = self.tags.pluck(:name) unless self.tags.nil?

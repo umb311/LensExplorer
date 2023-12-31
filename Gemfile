@@ -74,3 +74,5 @@ end
 gem "bulma-rails"
  
 gem 'devise'
+
+gem 'ransack'

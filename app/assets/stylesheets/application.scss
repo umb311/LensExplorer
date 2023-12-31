@@ -22,17 +22,13 @@
 }
 
 body {
-   // background-color: #1E2022;
+   background-color: #efefef;
    // color:#DDDDDD;
    /* サブ文字カラー：#9A9A9B */
 }
 
 h1 {
    font-size: 30px;
-}
-
-a {
-   // color:#DDDDDD;
 }
 
 .thumb {
@@ -51,6 +47,8 @@ a {
 
 #top-logo-img {
    margin: 0 auto;
+   padding-top: 20px;
+   padding-bottom: 20px;
 }
 
 .flex-box {
@@ -58,4 +56,34 @@ a {
    flex-wrap: wrap;
    gap: 10px;/*縦・横で同じ余白*/
    margin: 0 auto;
+}
+
+.box {
+   margin: 0 auto;
+}
+
+.checkbox {
+   margin-top: 15px;
+   margin-right: 15px;
+}
+
+.search-button {
+   margin-top: 15px;
+   text-align: center;
+}
+
+.main_img {
+   margin: 20px;
+}
+
+.tag-form {
+   margin: 10px;
+}
+
+.lens-detail {
+   margin: 10px;
+}
+
+.lens-name {
+   margin: 10px;
 }

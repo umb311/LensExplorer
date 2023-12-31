@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'lenses#index'
+  # root to: 'lenses#index'
+  root to: 'searches#index'
 
   # タグ検索用
     get "sarch_tag" => "lenses#search_tag"
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   # get 'items/destroy'
 
   resources :lenses
+  # resources :searches
 
   get 'search' => 'lenses#search'
 

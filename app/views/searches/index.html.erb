@@ -1,14 +1,15 @@
 <%= render "layouts/search" %>
 
 <% if user_signed_in? %>
-    <%= button_to "新規登録", new_lens_path, method: :get, class: :"button is-primary" %>
+    <%= button_to "新規登録", new_lens_path, method: :get, class: :"button is-primary"%>
+<% else %>
 <% end %>
 
 <div class="flex-box">
     <% @lenses.each do |lens| %>
         <div class="card">
             <div class="card-image">
-                <%= link_to image_tag("/images/#{lens.model_number}/#{lens.model_number}.jpg", class: "thumb"), lens_path(lens), target: :_blank %>
+                <%= link_to image_tag("/images/#{lens.model_number}/#{lens.model_number}.jpg", class: "thumb"), lens_path(lens) %>
             </div>
             <div class="card-content">
                 <div class="content">
