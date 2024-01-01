@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_10_022131) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_01_063748) do
   create_table "lens_tags", force: :cascade do |t|
     t.integer "lens_id", null: false
     t.integer "tag_id", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_022131) do
     t.string "name"
     t.string "model_number"
     t.string "mount"
-    t.boolean "lens_type"
+    t.string "lens_type"
     t.string "focal_length"
     t.integer "minimum_focusing_distance"
     t.integer "maximum_focusing_distance"
@@ -53,6 +53,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_022131) do
     t.text "description"
     t.string "maker"
     t.string "grade"
+    t.string "kakakucom_id"
+    t.boolean "focus_mode"
+    t.string "lens_class"
+    t.boolean "splash_proof"
+    t.boolean "dust_proof"
+    t.boolean "wide_lens"
+    t.boolean "telephoto_lens"
+    t.boolean "macro_lens"
+    t.boolean "high_magnification_lens"
+    t.boolean "fisheye_lens"
+    t.boolean "aori_lens"
+    t.boolean "mirror_lens"
+    t.boolean "large_diameter"
+    t.boolean "pancake"
+    t.boolean "support_FF"
+    t.boolean "support_APSC"
   end
 
   create_table "tags", force: :cascade do |t|
