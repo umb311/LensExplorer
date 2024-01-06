@@ -9,7 +9,7 @@
 require "csv"
 
 CSV.foreach('db/seeds/csv/lens-profile.csv', headers: true) do |row|
-    Content.create(
+    Lens.create(
         name: row['name'],
         model_number: row['model_number'],
         mount: row['mount'],

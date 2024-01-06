@@ -5,8 +5,9 @@ class Lens < ApplicationRecord
     has_many :lens_tags, dependent: :destroy
     has_many :tags, through: :lens_tags
 
+    # 検索対象のカラムを以下に追加する。
     def self.ransackable_attributes(auth_object = nil)
-        ["model_number", "name", "stabilization", "teleconverter_14x", "teleconverter_20x", "lens_type"]
+        ["model_number", "name", "stabilization", "support_FF", "support_APSC", "wide-lens", "telephoto-lens", "macro-lens", "high_magnification_lens"]
     end
 
     def save_lens_tags(tags)

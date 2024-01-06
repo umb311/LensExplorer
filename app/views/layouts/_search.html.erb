@@ -12,15 +12,9 @@
             </div>
             
             <div class="checkbox">
-                <%= f.label :lens_type_false, 'ズームレンズ' %>
+                <%= f.label :support_FF_true, 'フルサイズ対応' %>
                 <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
-                <%= f.check_box :lens_type_false, include_hidden: false %>
-            </div>
-            
-            <div class="checkbox">
-                <%= f.label :lens_type_true, '単焦点レンズ' %>
-                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
-                <%= f.check_box :lens_type_true, include_hidden: false %>
+                <%= f.check_box :support_FF_true, include_hidden: false %>
             </div>
             
             <div class="search-button">

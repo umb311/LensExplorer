@@ -9,7 +9,7 @@
 
 <div class="main_img">
     <div class="card">
-        <%= image_tag "/images/#{@lens.model_number}/#{@lens.model_number}.jpg" %>
+        <%= image_tag "/images/lens/#{@lens.kakakucom_id}.jpg" %>
     </div>
 </div>
 
@@ -30,17 +30,21 @@
         <th>名称</th>
         <td><%= @lens.name %></td>
     </tr>
+    <!--
     <tr>
         <th>型番</th>
         <td><%= @lens.model_number %></td>
     </tr>
+    -->
+    <!--
     <tr>
         <th>レンズマウント</th>
         <td><%= @lens.mount %></td>
     </tr>
+    -->
     <tr>
         <th>焦点距離(mm)</th>
-        <td><%= @lens.focal_length %>mm</td>
+        <td><%= @lens.focal_length %></td>
     </tr>
     <tr>
         <th>絞り</th>
@@ -56,7 +60,7 @@
     </tr>
     <tr>
         <th>最短撮影距離</th>
-        <td><%= @lens.minimum_shooting_distance %>m</td>
+        <td><%= @lens.minimum_shooting_distance %></td>
     </tr>
     <tr>
         <th>レンズ構成（群-枚）</th>
@@ -83,12 +87,22 @@
         <td><%= @lens.teleconverter_20x ? "対応" : "非対応" %></td>
     </tr>
     <tr>
-        <th>寸法(mm)</th>
+        <th>寸法</th>
         <td><%= @lens.dimensions %></td>
     </tr>
     <tr>
         <th>質量</th>
-        <td><%= @lens.weight %>g</td>
+        <td><%= @lens.weight %></td>
+    </tr>
+    <tr>
+        <th>対応センサーサイズ</th>
+        <td>
+            <%if @lens.support_FF %>
+                35mmフルサイズ
+            <% elsif @lens.support_APSC %>
+                APS-C
+            <% end %>
+        </td>
     </tr>
     <tr>
         <th>対応センサーサイズ</th>
