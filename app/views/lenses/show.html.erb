@@ -104,19 +104,5 @@
             <% end %>
         </td>
     </tr>
-    <tr>
-        <th>対応センサーサイズ</th>
-        <td>
-            <%if @lens.sensor_size == "FF" %>
-                35mmフルサイズ
-            <% elsif @lens.sensor_size == "APS-C" %>
-                APS-C
-            <% elsif @lens.sensor_size == "M4/3" %>
-                マイクロフォーサーズ
-            <% elsif @lens.sensor_size == "1inch" %>
-                １型
-            <% end %>
-        </td>
-    </tr>
 </table>
 </div>

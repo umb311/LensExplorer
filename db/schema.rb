@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_01_063748) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_06_181454) do
   create_table "lens_tags", force: :cascade do |t|
     t.integer "lens_id", null: false
     t.integer "tag_id", null: false
@@ -44,9 +44,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_01_063748) do
     t.string "lens_construction"
     t.string "maximum_magnification"
     t.string "filter_diameter"
-    t.boolean "stabilization"
-    t.boolean "teleconverter_14x"
-    t.boolean "teleconverter_20x"
+    t.boolean "stabilization", default: false
+    t.boolean "teleconverter_14x", default: false
+    t.boolean "teleconverter_20x", default: false
     t.string "dimensions"
     t.integer "weight"
     t.string "sensor_size"
@@ -56,19 +56,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_01_063748) do
     t.string "kakakucom_id"
     t.boolean "focus_mode"
     t.string "lens_class"
-    t.boolean "splash_proof"
-    t.boolean "dust_proof"
-    t.boolean "wide_lens"
-    t.boolean "telephoto_lens"
-    t.boolean "macro_lens"
-    t.boolean "high_magnification_lens"
-    t.boolean "fisheye_lens"
-    t.boolean "aori_lens"
-    t.boolean "mirror_lens"
-    t.boolean "large_diameter"
-    t.boolean "pancake"
-    t.boolean "support_FF"
-    t.boolean "support_APSC"
+    t.boolean "splash_proof", default: false
+    t.boolean "dust_proof", default: false
+    t.boolean "wide_lens", default: false
+    t.boolean "telephoto_lens", default: false
+    t.boolean "macro_lens", default: false
+    t.boolean "high_magnification_lens", default: false
+    t.boolean "fisheye_lens", default: false
+    t.boolean "aori_lens", default: false
+    t.boolean "mirror_lens", default: false
+    t.boolean "large_diameter", default: false
+    t.boolean "pancake", default: false
+    t.boolean "support_FF", default: false
+    t.boolean "support_APSC", default: false
   end
 
   create_table "tags", force: :cascade do |t|
