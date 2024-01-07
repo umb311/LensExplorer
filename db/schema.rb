@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_06_181454) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_07_140400) do
   create_table "lens_tags", force: :cascade do |t|
     t.integer "lens_id", null: false
     t.integer "tag_id", null: false
@@ -44,18 +44,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_06_181454) do
     t.string "lens_construction"
     t.string "maximum_magnification"
     t.string "filter_diameter"
-    t.boolean "stabilization", default: false
-    t.boolean "teleconverter_14x", default: false
-    t.boolean "teleconverter_20x", default: false
+    t.boolean "stabilization"
+    t.boolean "teleconverter_14x"
+    t.boolean "teleconverter_20x"
     t.string "dimensions"
     t.integer "weight"
     t.string "sensor_size"
     t.text "description"
     t.string "maker"
     t.string "grade"
-    t.string "kakakucom_id"
-    t.boolean "focus_mode"
-    t.string "lens_class"
+    t.boolean "support_FF", default: false
+    t.boolean "support_APSC", default: false
+    t.string "kakakucom_id", null: false
+    t.boolean "focus_mode", default: false
     t.boolean "splash_proof", default: false
     t.boolean "dust_proof", default: false
     t.boolean "wide_lens", default: false
@@ -67,8 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_06_181454) do
     t.boolean "mirror_lens", default: false
     t.boolean "large_diameter", default: false
     t.boolean "pancake", default: false
-    t.boolean "support_FF", default: false
-    t.boolean "support_APSC", default: false
+    t.string "lens_class", null: false
   end
 
   create_table "tags", force: :cascade do |t|

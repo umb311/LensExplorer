@@ -8,16 +8,12 @@
     <% @lenses.each do |lens| %>
         <div class="card">
             <div class="card-image">
-                <% puts "----------------------------" %>
                 <% img_path = "/opt/RailsProjects/LensExplorer/public/images/lens/#{lens.kakakucom_id}.jpg" %>
-                    <% puts img_path %>
                 <% if File.exist?(img_path) %>
                     <!-- 画像あり -->
-                    <% puts "画像あり" %>
                     <%= link_to image_tag("/images/lens/#{lens.kakakucom_id}.jpg", class: "thumb"), lens_path(lens), target: :_blank %>
                 <% else %>
                     <!-- 画像なし -->
-                    <% puts "画像なし" %>
                     <%= link_to image_tag("/images/lens/noimage.png", class: "thumb"), lens_path(lens), target: :_blank %>
                 <% end %>
             </div>

@@ -7,7 +7,7 @@ class Lens < ApplicationRecord
 
     # 検索対象のカラムを以下に追加する。
     def self.ransackable_attributes(auth_object = nil)
-        ["model_number", "name", "stabilization", "support_FF", "support_APSC", "wide-lens", "telephoto-lens", "macro-lens", "high_magnification_lens"]
+        ["model_number", "name", "stabilization", "support_FF", "support_APSC", "wide_lens", "telephoto_lens", "macro_lens", "high_magnification_lens"]
     end
 
     def save_lens_tags(tags)

@@ -17,6 +17,36 @@
                 <%= f.check_box :support_FF_true, include_hidden: false %>
             </div>
             
+            <div class="checkbox">
+                <%= f.label :support_APSC_true, 'APS-C用' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :support_APSC_true, include_hidden: false %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :wide_lens_true, '広角レンズ' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :wide_lens_true, include_hidden: false %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :telephoto_lens_true, '望遠レンズ' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :telephoto_lens_true, include_hidden: false %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :macro_lens_true, 'マクロレンズ' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :macro_lens_true, include_hidden: false %>
+            </div>
+            
+            <div class="checkbox">
+                <%= f.label :high_magnification_lens_true, '高倍率レンズ' %>
+                <!--　include_hidden: false　：　チェックを外した時にfalseのみが表示される対策 %> -->
+                <%= f.check_box :high_magnification_lens_true, include_hidden: false %>
+            </div>
+            
             <div class="search-button">
                 <%= f.submit "検索", class: :"button is-primary" %>
             </div>

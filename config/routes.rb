@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # root to: 'lenses#index'
-  root to: 'searches#index'
+  root to: 'lenses#index'
+  # root to: 'searches#index'
 
   # タグ検索用
     get "sarch_tag" => "lenses#search_tag"
