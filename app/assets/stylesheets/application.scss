@@ -31,6 +31,18 @@ h1 {
    font-size: 30px;
 }
 
+.search-form-spec {
+   margin:auto;
+}
+
+.search-form-sensor-size {
+   margin:auto;
+}
+
+.search-form-lens-type {
+   margin:auto;
+}
+
 .thumb {
    max-width: 200px; /* 画像の最大横幅を指定 */
    height: auto; /* 縦横比を維持 */
@@ -49,6 +61,7 @@ h1 {
    margin: 0 auto;
    padding-top: 20px;
    padding-bottom: 20px;
+   text-align:center
 }
 
 .flex-box {
